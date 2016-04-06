@@ -34,8 +34,9 @@ def index():
         message_type = root.findall('MsgType')[0].text # 消息类型text
         try:
             content = root.findall('Content')[0].text # 消息内容
+            content = unicode(content, "ascii")
         except:
-            content = ''
+            content = u''
         try:
             message_id = root.findall('MsgId')[0].text # 消息的ID
         except:
