@@ -34,7 +34,7 @@ def index():
         message_type = root.findall('MsgType')[0].text # 消息类型text
         try:
             content = root.findall('Content')[0].text # 消息内容
-            content = unicode(content, "utf-8")
+            content = unicode(content, 'utf-8')
         except:
             content = u''
         try:
@@ -62,7 +62,7 @@ def index():
             elif event_key == 'HEALTHY': # 健康养生
                 return text % (from_user_name, to_user_name, create_time,  u"健康养生模块正在开发中……")
 
-        return info % (from_user_name, to_user_name, create_time, u"梦续代码",content , "http://www.ihypo.net")
+        return info % (from_user_name, to_user_name, create_time, u"输入的内容为",content , "http://www.ihypo.net")
 
 
 info = """
